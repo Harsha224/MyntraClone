@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link, HashRouter as Router } from 'react-router-dom';
+import React from "react";
+import { Link, HashRouter as Router } from "react-router-dom";
 
-import Search from '../Search/Search';
+import Search from "../Search/Search";
 
-import './header.css';
+import "./header.css";
 
 class Header extends React.Component {
   render() {
@@ -12,7 +12,11 @@ class Header extends React.Component {
       <React.Fragment>
         <header>
           <div className="header_logo_container">
-            <img src="https://i.redd.it/96uiu7226qh41.png" alt="myntra_logo" className="logo_image" />
+            <img
+              src="https://i.redd.it/96uiu7226qh41.png"
+              alt="myntra_logo"
+              className="logo_image"
+            />
           </div>
           <div className="header_contents">
             <div className="header_contents header_content_types">
@@ -30,19 +34,19 @@ class Header extends React.Component {
             <Search />
           </div>
           <div className="header_right_container">
-            <div className="user_profile">
-              Profile
-          </div>
-            <div className="wishlist">
-              Wishlist({wishlistCount})
-          </div>
-            <div className="bag">
-              Bag({cartCount})
-          </div>
+            <div className="user_profile">Profile</div>
+            <Router>
+              <Link to="/wishlist">
+                <div className="wishlist">Wishlist({wishlistCount})</div>
+              </Link>
+              <Link to="/bag">
+                <div className="bag">Bag({cartCount})</div>
+              </Link>
+            </Router>
           </div>
         </header>
       </React.Fragment>
-    )
+    );
   }
 }
 

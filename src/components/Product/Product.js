@@ -1,9 +1,10 @@
-import React from 'react';
-import './product.css';
+import React from "react";
+import "./product.css";
 
 class Product extends React.Component {
   render() {
     const { product, addProductToBag, addProductToWishlist } = this.props;
+    //console.log(product);
     return (
       <div key={product.id}>
         <div>
@@ -11,10 +12,17 @@ class Product extends React.Component {
         </div>
         <div className="brandType">Brand: {product.brand}</div>
         <div className="price">Price: Rs.{product.price} </div>
-        <button className="addToBag" onClick={addProductToBag}>Add To Bag</button>
-        <button className="wishlist_btn" onClick={addProductToWishlist}>Wishlist</button>
+        <button className="addToBag" onClick={() => addProductToBag(product)}>
+          Add To Bag
+        </button>
+        <button
+          className="wishlist_btn"
+          onClick={() => addProductToWishlist(product)}
+        >
+          Wishlist
+        </button>
       </div>
-    )
+    );
   }
 }
 

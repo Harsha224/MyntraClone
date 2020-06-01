@@ -1,0 +1,13 @@
+.brandType {
+  font-size: 16px;
+  color: #282c3f;
+  font-weight: 600;
+  margin: 10px 0px 0px 15px;
+}
+
+.price {
+  font-size: 14px;
+  color: #282c3f;
+  font-weight: 500;
+  margin: 10px 0px 10px 15px;
+}
